@@ -1,7 +1,22 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Add transaction</h2>
-      </div>
-    </div>
+<h2>Add transaction</h2>
+
+<form class="form-group" (ngSubmit)="onAddTransaction(f)" #f="ngForm">
+
+
+  <label for="debitedacc">Debited Account:</label>
+  <div class="form-group">
+    <select name="debitedacc" ngModel class="form-control">
+        <option *ngFor="let acc of accountService.accountsList" value="{{acc.name}}">{{acc.name}}</option>
+      </select>
   </div>
+
+  <label for="creditedacc">Credited Account:</label>
+  <div class="form-group">
+    <select ngModel name="creditedacc" class="form-control">
+      <option *ngFor="let acc of accountService.accountsList" value="{{acc.name}}">{{acc.name}}</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary">Add Account</button>
+
+</form>

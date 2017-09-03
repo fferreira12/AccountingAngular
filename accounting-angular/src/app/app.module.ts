@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AddTransactionComponent } from './transaction/add-transaction/add-transaction.component';
@@ -10,6 +11,7 @@ import { TransactionListComponent } from './transaction/transaction-list/transac
 import { AccountGroupComponent } from './account/account-group/account-group.component';
 import { TransactionGroupComponent } from './transaction/transaction-group/transaction-group.component';
 import { AccountRowComponent } from './account/account-row/account-row.component';
+import { AccountService } from "./account/account.service";
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { AccountRowComponent } from './account/account-row/account-row.component
     AccountRowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

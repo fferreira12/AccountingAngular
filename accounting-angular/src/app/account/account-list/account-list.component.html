@@ -6,7 +6,7 @@
     </div>
     <div class="row">
       <div class="col-md-7">
-        <app-account-row *ngFor="let acc of accountsList" [account]="acc"></app-account-row>
+        <app-account-row *ngFor="let acc of accountService.accountsList" [account]="acc"></app-account-row>
       </div>
     </div>
   </div>

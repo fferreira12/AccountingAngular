@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from "../../account/account.service";
+import { NgForm } from "@angular/forms/";
 
 @Component({
   selector: 'app-add-transaction',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTransactionComponent implements OnInit {
 
-  constructor() { }
+  constructor(public accountService: AccountService) { }
 
   ngOnInit() {
+  }
+
+  onAddTransaction(form: NgForm) {
+    console.log(form);
   }
 
 }
