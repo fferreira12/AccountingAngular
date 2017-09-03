@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Accounts</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <app-account-row *ngFor="let acc of accountsList" [account]="acc"></app-account-row>
+      </div>
+    </div>
+  </div>
