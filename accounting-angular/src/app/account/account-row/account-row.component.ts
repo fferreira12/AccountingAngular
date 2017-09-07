@@ -1,4 +1,5 @@
 import { Component, OnInit, Input  } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 
 import { Account } from '../account.model';
 import { AccountType } from '../account-type.model';

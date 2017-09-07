@@ -5,7 +5,8 @@
     </h4>
     <p class="list-group-item-text">
       <span>{{ accountType }}</span>
-      | {{ account.description }}
+      <br>{{ account.value | currency:'BRL':true }}
+      <!-- <br>{{ account.description }} -->
     </p>
   </div>
 </a>
