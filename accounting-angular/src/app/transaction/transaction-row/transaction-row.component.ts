@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Transaction } from "../transaction.model";
+import { BalanceType } from "../../balance-type.model";
 
 @Component({
   selector: 'app-transaction-row',

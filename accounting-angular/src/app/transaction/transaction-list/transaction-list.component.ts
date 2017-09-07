@@ -10,12 +10,13 @@ import { Transaction } from "../transaction.model";
 })
 export class TransactionListComponent implements OnInit {
 
-  transacs: Transaction[];
+  //transacs: Transaction[] = this.transactionService.transactionsList;
 
   constructor(public transactionService: TransactionService) { }
 
   ngOnInit() {
-    this.transacs = this.transactionService.transactionsList;
+    //this.transacs = this.transactionService.transactionsList;
+    
   }
 
 }

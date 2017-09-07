@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-md-7">
-      <app-transaction-row *ngFor="let trans of this.transacs" [transaction]="trans"></app-transaction-row>
+      <app-transaction-row *ngFor="let trans of this.transactionService.getTransactions()" [transaction]="trans"></app-transaction-row>
     </div>
   </div>
 </div>

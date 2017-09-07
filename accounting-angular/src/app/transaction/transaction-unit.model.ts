@@ -11,4 +11,12 @@ export class TransactionUnit {
         this.value = value;
         this.balance = balance;
     }
+
+    getSign(): String {
+        if(this.balance == BalanceType.Debit) {
+            return "-";
+        } else {
+            return "+";
+        }
+    }
 }
