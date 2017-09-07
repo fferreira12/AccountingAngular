@@ -13,6 +13,8 @@ import { AccountGroupComponent } from './account/account-group/account-group.com
 import { TransactionGroupComponent } from './transaction/transaction-group/transaction-group.component';
 import { AccountRowComponent } from './account/account-row/account-row.component';
 import { AccountService } from "./account/account.service";
+import { TransactionService } from "./transaction/transaction.service";
+import { TransactionRowComponent } from './transaction/transaction-row/transaction-row.component';
 
 const appRoutes: Routes = [
   { path: 'account', component: AccountGroupComponent },
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     TransactionListComponent,
     AccountGroupComponent,
     TransactionGroupComponent,
-    AccountRowComponent
+    AccountRowComponent,
+    TransactionRowComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [AccountService],
+  providers: [AccountService, TransactionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

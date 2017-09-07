@@ -1,12 +1,12 @@
 import { Account } from '../account/account.model';
-import { TransactionBalance } from "./transaction-balance.model";
+import { BalanceType } from "../balance-type.model";
 
 export class TransactionUnit {
     public account: Account;
+    public balance: BalanceType;
     public value: number;
-    public balance: TransactionBalance;
 
-    constructor(account: Account, value: number, balance: TransactionBalance) {
+    constructor(account: Account, value: number, balance: BalanceType) {
         this.account = account;
         this.value = value;
         this.balance = balance;
