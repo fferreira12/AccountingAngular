@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AddTransactionComponent } from './transaction/add-transaction/add-transaction.component';
@@ -12,6 +13,16 @@ import { AccountGroupComponent } from './account/account-group/account-group.com
 import { TransactionGroupComponent } from './transaction/transaction-group/transaction-group.component';
 import { AccountRowComponent } from './account/account-row/account-row.component';
 import { AccountService } from "./account/account.service";
+
+const appRoutes: Routes = [
+  { path: 'account', component: AccountGroupComponent },
+  { path: 'transaction', component: TransactionGroupComponent },
+  { 
+    path: '',
+    redirectTo: '/account',
+    pathMatch: 'full'
+  },
+];
 
 @NgModule({
   declarations: [
@@ -27,7 +38,11 @@ import { AccountService } from "./account/account.service";
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]
