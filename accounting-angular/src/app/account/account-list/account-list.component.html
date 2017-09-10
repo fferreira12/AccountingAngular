@@ -1,18 +1,17 @@
-<div class="container">
+
   <div class="row">
     <div class="col-md-12">
       <h2>Accounts</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-7 mb-1">
+    <div class="col-md-12">
       <a routerLink="/account/add"><button class="btn btn-primary">Add New Account</button></a>
       <hr>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-12">
       <app-account-row *ngFor="let acc of accountService.accountsList" [account]="acc" (onAccountClicked)="onAccountClicked($event)"></app-account-row>
     </div>
   </div>
-</div>

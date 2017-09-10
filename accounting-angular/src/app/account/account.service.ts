@@ -33,4 +33,8 @@ export class AccountService {
         this.onAccountSelected.emit(account);
     }
 
+    getAccTypes() {
+        return Object.keys(AccountType).map(key => AccountType[key]).filter(value => typeof value === 'string') as string[];
+    }
+
 }
