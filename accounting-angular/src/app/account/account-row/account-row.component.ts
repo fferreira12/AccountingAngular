@@ -23,6 +23,7 @@ export class AccountRowComponent implements OnInit {
 
   ngOnInit() {
     this.accountType = AccountType[this.account.accountType];
+    
   }
 
   onClicked() {

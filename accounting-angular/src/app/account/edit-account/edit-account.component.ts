@@ -16,4 +16,10 @@ export class EditAccountComponent implements OnInit {
 
   }
 
+  onAccTypeChange(selectElement) {
+    console.log(selectElement);
+    this.accountService.selectedAccount.setAccTypeStr(selectElement.target.value);
+    this.accountService.onAccountChanged.emit(this.accountService.selectedAccount);
+  }
+
 }

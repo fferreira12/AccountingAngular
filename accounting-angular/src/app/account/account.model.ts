@@ -18,4 +18,8 @@ export class Account {
     getAccTypeStr(): string {
         return AccountType[this.accountType];
     }
+
+    setAccTypeStr(value: string) {
+        this.accountType = AccountType[value];
+    }
 }

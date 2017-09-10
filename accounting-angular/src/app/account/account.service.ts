@@ -11,12 +11,15 @@ export class AccountService {
     @Output()
     public onAccountSelected: EventEmitter<Account> = new EventEmitter();
 
+    @Output()
+    public onAccountChanged: EventEmitter<Account> = new EventEmitter();
+
     public accountsList: Account[] = [
         new Account("Non alocated", "money not associated with other accounts", AccountType.Asset),
         new Account("Gasoline reserve", "reserve for gasoline expense", AccountType.Expense),
         new Account("Food reserve", "reserve for food", AccountType.Liability),
         new Account("Bills reserve", "reserve for paying my bills", AccountType.Revenue),
-        new Account("Trip reserve", "reserbe for money to be spent on trips", AccountType.Asset),
+        new Account("Trip reserve", "reserve for money to be spent on trips", AccountType.Asset),
         new Account("Wallet reserve", "reserve for money that will be withdrawed", AccountType.Expense),
         new Account("Contingency reserve", "reserve for any kind of emergency", AccountType.Liability)
     ];

@@ -1,4 +1,4 @@
-<h2>Edit account: {{account.name}}</h2>
+<h2>Edit account: {{accountService.selectedAccount.name}}</h2>
 <form class="form-group" (ngSubmit)="onEditAccount(f)" #f="ngForm">
 
   <div class="form-group">
@@ -10,13 +10,12 @@
     <input type="text" class="form-control" [(ngModel)]="accountService.selectedAccount.description" name="accdesc">
   </div>
   <div class="form-group">
-    <select name="acctype" ngModel name="acctype" class="form-control">
+    <select name="acctype" ngModel name="acctype" class="form-control" (change)="onAccTypeChange($event)">
       <option value="Asset">Asset</option>
       <option value="Liability">Liability</option>
       <option value="Revenue">Revenue</option>
       <option value="Expense">Expense</option>
     </select>
   </div>
-  <button class="btn btn-primary">Save Account</button>
-
+  <!-- <button class="btn btn-primary">Save Account</button> -->
 </form>

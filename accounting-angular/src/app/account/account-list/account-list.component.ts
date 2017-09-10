@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
 
 import { Account } from '../account.model';
 import { AccountType } from '../account-type.model';
@@ -14,7 +15,7 @@ export class AccountListComponent implements OnInit {
 
   //dummy data
   
-  constructor(public accountService: AccountService) { }
+  constructor(public accountService: AccountService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -22,6 +23,7 @@ export class AccountListComponent implements OnInit {
   onAccountClicked(acc: Account) {
     //console.log(acc);
     this.accountService.selectAccount(acc);
+    this.router.navigate(['detail'], { relativeTo: this.route });
   }
 
 }

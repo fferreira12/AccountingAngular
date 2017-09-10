@@ -19,9 +19,11 @@ import { AccountDetailComponent } from './account/account-detail/account-detail.
 import { EditAccountComponent } from './account/edit-account/edit-account.component';
 
 const appRoutes: Routes = [
-  { path: 'account', component: AccountGroupComponent },
-  { path: 'account/add', component: AddAccountComponent },
-  { path: 'account/edit', component: EditAccountComponent },
+  { path: 'account', component: AccountGroupComponent, children: [
+    { path: 'add', component: AddAccountComponent },
+    { path: 'detail', component: AccountDetailComponent },
+    { path: 'edit', component: EditAccountComponent }
+  ] },
   { path: 'transaction', component: TransactionGroupComponent },
   { 
     path: '',
