@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Account: {{ account.name }}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <span class="badge badge-secondary">{{ account.getAccTypeStr() }}</span>
+      <p>{{ account.description }}</p>
+      <p>Current Value <span class="badge badge-secondary">{{ account.value | currency:'BRL':true}}</span></p>
+      <a routerLink="/account/edit"><button class="btn btn-primary">Edit Account</button></a>
+  </div>
+</div>

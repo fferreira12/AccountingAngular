@@ -15,9 +15,13 @@ import { AccountRowComponent } from './account/account-row/account-row.component
 import { AccountService } from "./account/account.service";
 import { TransactionService } from "./transaction/transaction.service";
 import { TransactionRowComponent } from './transaction/transaction-row/transaction-row.component';
+import { AccountDetailComponent } from './account/account-detail/account-detail.component';
+import { EditAccountComponent } from './account/edit-account/edit-account.component';
 
 const appRoutes: Routes = [
   { path: 'account', component: AccountGroupComponent },
+  { path: 'account/add', component: AddAccountComponent },
+  { path: 'account/edit', component: EditAccountComponent },
   { path: 'transaction', component: TransactionGroupComponent },
   { 
     path: '',
@@ -37,7 +41,9 @@ const appRoutes: Routes = [
     AccountGroupComponent,
     TransactionGroupComponent,
     AccountRowComponent,
-    TransactionRowComponent
+    TransactionRowComponent,
+    AccountDetailComponent,
+    EditAccountComponent
   ],
   imports: [
     BrowserModule,

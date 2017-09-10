@@ -19,4 +19,9 @@ export class AccountListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onAccountClicked(acc: Account) {
+    //console.log(acc);
+    this.accountService.selectAccount(acc);
+  }
+
 }

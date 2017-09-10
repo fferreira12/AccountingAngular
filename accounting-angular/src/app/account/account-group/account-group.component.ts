@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from "../account.service";
 
 @Component({
   selector: 'app-account-group',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountGroupComponent implements OnInit {
 
-  constructor() { }
+  accountSelected: Account;
+
+  constructor(public accountService: AccountService) { }
 
   ngOnInit() {
+    this.accountService.onAccountSelected.subscribe((account) => {
+      this.accountSelected = account;
+      console.log("account selected on account group component");
+      console.log(this.accountSelected);
+    });
   }
+
+  // onSelecAccount(account: Account) {
+  //   this.accountSelected = account;
+  // }
 
 }
